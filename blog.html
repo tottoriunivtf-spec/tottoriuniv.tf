@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>鳥取大学陸上部 - 最近の活動（ブログ）</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+  <div class="app-container">
+    <nav class="navbar">
+      <a href="index.html" class="brand">
+        <i data-lucide="activity" color="var(--primary)" width="28" height="28"></i>
+        Tottori T&F
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html" class="nav-link"><i data-lucide="home" width="18" height="18"></i> ホーム</a>
+        <a href="goals.html" class="nav-link"><i data-lucide="target" width="18" height="18"></i> チーム目標</a>
+        <a href="parts.html" class="nav-link"><i data-lucide="info" width="18" height="18"></i> パート紹介</a>
+        <a href="members.html" class="nav-link"><i data-lucide="users" width="18" height="18"></i> メンバー</a>
+        <a href="activities.html" class="nav-link"><i data-lucide="activity" width="18" height="18"></i> 活動内容</a>
+        <a href="blog.html" class="nav-link active"><i data-lucide="edit-3" width="18" height="18"></i> 最近の活動</a>
+        <a href="records.html" class="nav-link"><i data-lucide="trophy" width="18" height="18"></i> 歴代記録</a>
+        <a href="last_year_records.html" class="nav-link"><i data-lucide="award" width="18" height="18"></i> 去年の記録</a>
+      </div>
+      <button class="mobile-menu-btn" id="mobile-menu-btn">
+        <i data-lucide="menu" width="24" height="24"></i>
+      </button>
+    </nav>
+
+    <main>
+      <div class="container page-enter">
+        <h1 class="page-title" data-en="BLOG">最近の活動</h1>
+
+        <!-- Search Bar -->
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 2rem;">
+          <div class="search-wrapper">
+            <i data-lucide="search" class="search-icon" width="20" height="20"></i>
+            <input type="text" id="blog-search" class="search-input" placeholder="記事を検索...">
+          </div>
+        </div>
+
+        <!-- Blog Container -->
+        <div id="blog-container" class="grid" style="gap: 2.5rem;">
+          <!-- Skeleton Loading State -->
+          <div class="card blog-card" style="padding: 2rem; text-align: center;">
+            <i data-lucide="loader-2" class="spin-icon" color="var(--primary)" width="40" height="40" style="margin-bottom: 1rem; animation: spin 2s linear infinite;"></i>
+            <p>ブログ記事を読み込んでいます...</p>
+          </div>
+        </div>
+
+        <p id="empty-blog-msg" style="display: none; text-align: center; color: var(--text-muted); margin-top: 2rem;">
+          一致する記事が見つかりませんでした。
+        </p>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p id="footer-year"></p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('footer-year').innerHTML = `© ${new Date().getFullYear()} Tottori University Track & Field Club. All rights reserved.`;
+  </script>
+</body>
+
+</html>

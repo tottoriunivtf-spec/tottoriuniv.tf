@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>鳥取大学陸上部</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+  <div class="app-container">
+    <nav class="navbar">
+      <a href="index.html" class="brand">
+        <i data-lucide="activity" color="var(--primary)" width="28" height="28"></i>
+        Tottori T&F
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html" class="nav-link"><i data-lucide="home" width="18" height="18"></i> ホーム</a>
+        <a href="goals.html" class="nav-link"><i data-lucide="target" width="18" height="18"></i> チーム目標</a>
+        <a href="parts.html" class="nav-link"><i data-lucide="info" width="18" height="18"></i> パート紹介</a>
+        <a href="members.html" class="nav-link"><i data-lucide="users" width="18" height="18"></i> メンバー</a>
+        <a href="activities.html" class="nav-link"><i data-lucide="activity" width="18" height="18"></i> 活動内容</a>
+        <a href="blog.html" class="nav-link"><i data-lucide="edit-3" width="18" height="18"></i> 最近の活動</a>
+        <a href="records.html" class="nav-link"><i data-lucide="trophy" width="18" height="18"></i> 歴代記録</a>
+        <a href="last_year_records.html" class="nav-link"><i data-lucide="award" width="18" height="18"></i> 去年の記録</a>
+      </div>
+      <button class="mobile-menu-btn" id="mobile-menu-btn">
+        <i data-lucide="menu" width="24" height="24"></i>
+      </button>
+    </nav>
+
+    <main>
+      <div class="page-enter">
+        <section class="hero"
+          style="background-image: url('hero-bg.jpg'); background-size: cover; background-position: center; background-color: var(--surface-hover);">
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <div class="badge">TOTTORI UNIVERSITY</div>
+            <h1 class="hero-title">鳥取大学陸上競技部</h1>
+            <p class="hero-subtitle">鳥取大学陸上競技部公式ウェブサイト。<br>共に汗を流し、自己ベストを目指す仲間を募集しています。</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
+              <a href="activities.html" class="btn">
+                活動内容を見る <i data-lucide="arrow-right" width="20" height="20"></i>
+              </a>
+              <a href="https://www.instagram.com/tottori.univ.tf/" target="_blank" class="btn"
+                style="background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);">
+                <i data-lucide="instagram" width="20" height="20"></i> Instagram
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="container" style="margin: 5rem auto;">
+          <h2 class="page-title" data-en="FEATURES">私たちの特徴</h2>
+          <div class="grid">
+            <div class="card">
+              <i data-lucide="activity" color="var(--primary)" width="40" height="40" style="margin-bottom: 1rem;"></i>
+              <h3>日々の鍛錬</h3>
+              <p style="margin-top: 1rem; color: var(--text-muted);">
+                週数回の全体練習に加え、個々の目標に合わせた自主練習も活発に行われています。真剣に競技と向き合う環境がここにあります。
+              </p>
+            </div>
+            <div class="card">
+              <i data-lucide="users" color="var(--secondary)" width="40" height="40" style="margin-bottom: 1rem;"></i>
+              <h3>チームの絆</h3>
+              <p style="margin-top: 1rem; color: var(--text-muted);">
+                学年や種目の垣根を越え、お互いが高め合う関係性を大切にしています。合宿やイベントを通じた交流も盛んです。
+              </p>
+            </div>
+            <div class="card">
+              <i data-lucide="trophy" color="#eab308" width="40" height="40" style="margin-bottom: 1rem;"></i>
+              <h3>輝かしい実績</h3>
+              <p style="margin-top: 1rem; color: var(--text-muted);">
+                中国四国学生陸上競技対校選手権大会（中四インカレ）や各種記録会で、多くの選手が素晴らしい成績を収めています。
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p id="footer-year"></p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('footer-year').innerHTML = `© ${new Date().getFullYear()} Tottori University Track & Field Club. All rights reserved.`;
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>鳥取大学陸上部 - ブログ記事</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+  <div class="app-container">
+    <nav class="navbar">
+      <a href="index.html" class="brand">
+        <i data-lucide="activity" color="var(--primary)" width="28" height="28"></i>
+        Tottori T&F
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html" class="nav-link"><i data-lucide="home" width="18" height="18"></i> ホーム</a>
+        <a href="goals.html" class="nav-link"><i data-lucide="target" width="18" height="18"></i> チーム目標</a>
+        <a href="parts.html" class="nav-link"><i data-lucide="info" width="18" height="18"></i> パート紹介</a>
+        <a href="members.html" class="nav-link"><i data-lucide="users" width="18" height="18"></i> メンバー</a>
+        <a href="activities.html" class="nav-link"><i data-lucide="activity" width="18" height="18"></i> 活動内容</a>
+        <a href="blog.html" class="nav-link active"><i data-lucide="edit-3" width="18" height="18"></i> 最近の活動</a>
+        <a href="records.html" class="nav-link"><i data-lucide="trophy" width="18" height="18"></i> 歴代記録</a>
+        <a href="last_year_records.html" class="nav-link"><i data-lucide="award" width="18" height="18"></i> 去年の記録</a>
+      </div>
+      <button class="mobile-menu-btn" id="mobile-menu-btn">
+        <i data-lucide="menu" width="24" height="24"></i>
+      </button>
+    </nav>
+
+    <main>
+      <div class="container page-enter" style="max-width: 800px; padding-top: 2rem;">
+        
+        <div style="margin-bottom: 2rem;">
+          <a href="blog.html" class="btn" style="padding: 0.5rem 1.2rem; font-size: 0.95rem; background: var(--surface); color: var(--text); border: 1px solid var(--border); box-shadow: none;">
+            <i data-lucide="arrow-left" width="18" height="18"></i> ブログ一覧へ戻る
+          </a>
+        </div>
+
+        <article class="card" style="padding: 3rem 2rem;">
+          <div class="blog-post-header">
+            <div class="blog-post-date" id="post-date">
+              <i data-lucide="calendar" width="18" height="18"></i> <span>読み込み中...</span>
+            </div>
+            <h1 class="blog-post-title" id="post-title">読み込み中...</h1>
+          </div>
+
+          <div class="blog-post-image-container" id="post-image-container">
+            <!-- Image will be injected here -->
+          </div>
+
+          <div class="blog-post-content" id="post-content">
+            読み込み中...
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p id="footer-year"></p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('footer-year').innerHTML = `&copy; ${new Date().getFullYear()} Tottori University Track & Field Club. All rights reserved.`;
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize Lucide icons for this page
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+
+      // Load post data from sessionStorage
+      const postDataStr = sessionStorage.getItem('currentBlogPost');
+      if (postDataStr) {
+        try {
+          const postData = JSON.parse(postDataStr);
+          
+          document.getElementById('post-title').textContent = postData.title || '無題';
+          document.querySelector('#post-date span').textContent = postData.date || '';
+          document.getElementById('post-content').textContent = postData.content || '';
+          
+          const imgContainer = document.getElementById('post-image-container');
+          if (postData.imageUrl && postData.imageUrl.trim() !== '') {
+            imgContainer.innerHTML = window.createSlideshowHTML(postData.imageUrl, postData.title, false);
+            if (typeof window.initSlideshows === 'function') {
+              window.initSlideshows();
+            }
+          } else {
+            // If no image, hide the container to save space
+            imgContainer.style.display = 'none';
+          }
+          
+        } catch (e) {
+          console.error("Error parsing blog post data:", e);
+          document.getElementById('post-content').innerHTML = '<span style="color: red;">データの読み込みに失敗しました。</span>';
+        }
+      } else {
+        document.getElementById('post-title').textContent = '記事が見つかりません';
+        document.querySelector('#post-date span').textContent = '-';
+        document.getElementById('post-content').textContent = 'ブログ一覧ページから記事を選択してください。';
+        document.getElementById('post-image-container').style.display = 'none';
+      }
+    });
+  </script>
+</body>
+
+</html>

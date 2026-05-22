@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>鳥取大学陸上部 - チーム目標</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="app-container">
+    <nav class="navbar">
+      <a href="index.html" class="brand">
+        <i data-lucide="activity" color="var(--primary)" width="28" height="28"></i>
+        Tottori TF
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html" class="nav-link"><i data-lucide="home" width="18" height="18"></i> ホーム</a>
+        <a href="goals.html" class="nav-link"><i data-lucide="target" width="18" height="18"></i> チーム目標</a>
+        <a href="parts.html" class="nav-link"><i data-lucide="info" width="18" height="18"></i> パート紹介</a>
+        <a href="members.html" class="nav-link"><i data-lucide="users" width="18" height="18"></i> メンバー</a>
+        <a href="activities.html" class="nav-link"><i data-lucide="activity" width="18" height="18"></i> 活動内容</a>
+        <a href="blog.html" class="nav-link"><i data-lucide="edit-3" width="18" height="18"></i> 最近の活動</a>
+        <a href="records.html" class="nav-link"><i data-lucide="trophy" width="18" height="18"></i> 歴代記録</a>
+        <a href="last_year_records.html" class="nav-link"><i data-lucide="award" width="18" height="18"></i> 去年の記録</a>
+      </div>
+      <button class="mobile-menu-btn" id="mobile-menu-btn">
+        <i data-lucide="menu" width="24" height="24"></i>
+      </button>
+    </nav>
+
+    <main>
+      <div class="container page-enter">
+        <h1 class="page-title" data-en="TEAM GOALS">チーム目標</h1>
+
+        <div class="card" style="text-align: center; padding: 4rem 2rem; margin-bottom: 4rem; background: linear-gradient(to bottom right, var(--surface), rgba(14, 165, 233, 0.1));">
+          <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary);">「全員自己ベスト更新」</h2>
+          <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 800px; margin: 0 auto;">
+            私たちはただ勝つことだけを目標にしているわけではありません。前日の自分を超えること、それが最も重要だと考えています。
+          </p>
+        </div>
+
+        <div class="grid">
+          <div class="card" style="position: relative; overflow: hidden;">
+            <div style="position: absolute; right: -20px; top: -20px; opacity: 0.1;">
+              <i data-lucide="target" width="120" height="120"></i>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+              <i data-lucide="target" color="var(--primary)"></i> 大会目標
+            </h3>
+            <ul style="padding-left: 1.5rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 1rem;">
+              <li>中四国インカレでの上位入賞・自己ベスト更新</li>
+              <li>全日本インカレの標準記録突破者の輩出</li>
+              <li>各種地方大会での決勝進出</li>
+            </ul>
+          </div>
+
+          <div class="card" style="position: relative; overflow: hidden;">
+            <div style="position: absolute; right: -20px; top: -20px; opacity: 0.1;">
+              <i data-lucide="flag" width="120" height="120"></i>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+              <i data-lucide="flag" color="var(--secondary)"></i> チームスローガン
+            </h3>
+            <p style="color: var(--text-muted); margin-bottom: 1rem;">
+              <strong>「One for All, All for One」</strong>
+            </p>
+            <p style="color: var(--text-muted);">
+              個人競技である陸上ですが、日々の練習はチームのサポートがあってこそ成り立ちます。互いを高め合う環境を作ります。
+            </p>
+          </div>
+
+          <div class="card" style="position: relative; overflow: hidden;">
+            <div style="position: absolute; right: -20px; top: -20px; opacity: 0.1;">
+              <i data-lucide="zap" width="120" height="120"></i>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+              <i data-lucide="zap" color="#eab308"></i> 日々の心構え
+            </h3>
+            <ul style="padding-left: 1.5rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 1rem;">
+              <li>競技を楽しむ心を忘れない</li>
+              <li>感謝の気持ちを持ち、挨拶を怠らない</li>
+              <li>文武両道を体現し、社会で活躍できる人間力を培う</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p id="footer-year"></p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('footer-year').innerHTML = `© ${new Date().getFullYear()} Tottori University Track & Field Club. All rights reserved.`;
+  </script>
+</body>
+</html>
+
+

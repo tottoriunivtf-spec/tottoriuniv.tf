@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>鳥取大学陸上部 - メンバー紹介</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+  <div class="app-container">
+    <nav class="navbar">
+      <a href="index.html" class="brand">
+        <i data-lucide="activity" color="var(--primary)" width="28" height="28"></i>
+        Tottori T&F
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html" class="nav-link"><i data-lucide="home" width="18" height="18"></i> ホーム</a>
+        <a href="goals.html" class="nav-link"><i data-lucide="target" width="18" height="18"></i> チーム目標</a>
+        <a href="parts.html" class="nav-link"><i data-lucide="info" width="18" height="18"></i> パート紹介</a>
+        <a href="members.html" class="nav-link"><i data-lucide="users" width="18" height="18"></i> メンバー</a>
+        <a href="activities.html" class="nav-link"><i data-lucide="activity" width="18" height="18"></i> 活動内容</a>
+        <a href="blog.html" class="nav-link"><i data-lucide="edit-3" width="18" height="18"></i> 最近の活動</a>
+        <a href="records.html" class="nav-link"><i data-lucide="trophy" width="18" height="18"></i> 歴代記録</a>
+        <a href="last_year_records.html" class="nav-link"><i data-lucide="award" width="18" height="18"></i> 去年の記録</a>
+      </div>
+      <button class="mobile-menu-btn" id="mobile-menu-btn">
+        <i data-lucide="menu" width="24" height="24"></i>
+      </button>
+    </nav>
+
+    <main>
+      <div class="container page-enter">
+        <h1 class="page-title" data-en="MEMBERS">メンバー紹介</h1>
+
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap;">
+          <button class="tab-btn grade-4 active" data-grade="4">4年生</button>
+          <button class="tab-btn grade-3" data-grade="3">3年生</button>
+          <button class="tab-btn grade-2" data-grade="2">2年生</button>
+          <button class="tab-btn grade-1" data-grade="1">1年生</button>
+        </div>
+
+        <div class="carousel-wrapper" id="carousel-wrapper">
+          <button class="carousel-nav prev" id="carousel-prev"><i data-lucide="chevron-left" width="32"
+              height="32"></i></button>
+
+          <div class="carousel-scene">
+            <div class="carousel-container" id="members-carousel">
+              <!-- メンバーデータがここに動的に追加されます -->
+            </div>
+          </div>
+
+          <button class="carousel-nav next" id="carousel-next"><i data-lucide="chevron-right" width="32"
+              height="32"></i></button>
+        </div>
+
+        <p id="empty-message" style="text-align: center; color: var(--text-muted); display: none;">メンバー情報がありません。</p>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p id="footer-year"></p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('footer-year').innerHTML = `© ${new Date().getFullYear()} Tottori University Track & Field Club. All rights reserved.`;
+  </script>
+</body>
+
+</html>
